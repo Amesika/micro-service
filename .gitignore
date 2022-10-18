@@ -1,2 +1,4 @@
 # Variable d'environement
 .env/
+mongo/
+mysql/
