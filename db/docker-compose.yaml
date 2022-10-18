@@ -1,4 +1,18 @@
 version: '3.9'
 services: 
   mongo:
+    image: mongo:4.2.23-bionic
+    container_name: ms_mongo
+    env_file: .env/mongo.env
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/db/:/data/db
+      - ./mongo/config/:/data/configdb
+    networks:
+      - ms
+      
+networks:
+  ms:
+
   # mysql:
