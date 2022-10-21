@@ -30,21 +30,19 @@ public class MicroServiceApplication {
 			categoryRepository.findAll().forEach(System.out::println);
 
 			productRepository.deleteAll();
-			Category c1= categoryRepository.findById("C1").get();
-			Stream.of("P1","P2","P3","P4").forEach(c -> {
-				Product p = productRepository.save(new Product(null, c,Math.random()*1000 ,c1));
+			Category c1 = categoryRepository.findById("C1").get();
+			Stream.of("P1", "P2", "P3", "P4").forEach(c -> {
+				Product p = productRepository.save(new Product(null, c, Math.random() * 1000, c1));
 				c1.getProducts().add(p);
 				categoryRepository.save(c1);
 			});
-			Category c2= categoryRepository.findById("C2").get();
-			Stream.of("P5","P6").forEach(c -> {
-				Product p = productRepository.save(new Product(null, c,Math.random()*1000 ,c2));
+			Category c2 = categoryRepository.findById("C2").get();
+			Stream.of("P5", "P6").forEach(c -> {
+				Product p = productRepository.save(new Product(null, c, Math.random() * 1000, c2));
 				c2.getProducts().add(p);
 				categoryRepository.save(c2);
 			});
 			productRepository.findAll().forEach(System.out::println);
-
 		};
 	}
-
 }

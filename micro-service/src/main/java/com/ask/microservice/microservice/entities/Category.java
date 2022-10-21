@@ -18,7 +18,7 @@ public class Category {
     @Id
     private  String id;
     private  String  name;
-    @DBRef
-    @ToString.Exclude
+    
+    @DBRef @ToString.Exclude
     private  Collection<Product> products = new ArrayList<>();
 }

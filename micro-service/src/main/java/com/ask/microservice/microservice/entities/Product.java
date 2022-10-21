@@ -16,7 +16,7 @@ public class Product {
     private String id;
     private String name;
     private Double price;
-    @DBRef
-    @ToString.Exclude
+
+    @DBRef @ToString.Exclude
     private Category category;
 }
